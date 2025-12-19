@@ -68,6 +68,60 @@ header, nav {
   margin: 0 auto;
 }
 
+/* --------- Main Content --------- */
+main {
+  padding: 40px 16px;
+}
+
+/* --------- Section --------- */
+section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+/* --------- Products Layout --------- */
+section .product {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #e5e7eb;
+}
+
+.product h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.product p {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #374151;
+}
+
+/* --------- Buttons --------- */
+.product button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.product button:hover {
+  background: #1e40af;
+}
+
+
+
+
 /* --------- Mobile tweak --------- */
 @media (max-width: 480px) {
   header h1 {
