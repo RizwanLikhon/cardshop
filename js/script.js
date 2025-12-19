@@ -1,17 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const productsBtn = document.getElementById("productsBtn");
-  const productsMenu = document.getElementById("productsMenu");
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("productsBtn");
+  const menu = document.getElementById("productsMenu");
 
-  if (!productsBtn || !productsMenu) return;
+  if (!btn || !menu) return;
 
-  // Toggle dropdown on click
-  productsBtn.addEventListener("click", function (e) {
+  btn.addEventListener("click", (e) => {
     e.stopPropagation();
-    productsMenu.classList.toggle("show");
+    menu.classList.toggle("show");
   });
 
-  // Close dropdown when clicking outside
-  document.addEventListener("click", function () {
-    productsMenu.classList.remove("show");
+  document.addEventListener("click", () => {
+    menu.classList.remove("show");
   });
 });
