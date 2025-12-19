@@ -1,40 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content width="width=device-width, initial-scale=1.0">
-        <title>Rizzy Pokemon Shop</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-            <h1>Rizzy Pokemon Shop!</h1>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="Home">Home</a></li>
-                <li><a href="Products">Products</a></li>
-                <li><a herf="about">About</a></li>
-                <li><a href="Contact">Contact</a></li>
-            </ul>
-        </nav>
-        <main>
-            <section>
-                <h2>Featured Products</h2>
-                <div class="product">
-                    <h3>Pokemon Card Pack</h3>
-                    <p>Get a random pack of Pokemon cards to add to your collection!</p>
-                    <button>Buy Now</button>
-                </div>
-                <div class="product">
-                    <h3>Cards</h3>
-                    <p>Get your Favourite and Chase cards</p>
-                    <button>Buy Now</button>
-                </div>
-            </section>
-        </main>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rizzy Pokémon Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    </body>
+<body>
 
+  <!-- Header -->
+  <header>
+    <h1>Rizzy Pokémon Shop</h1>
+    <p>Your one-stop shop for Pokémon cards & collectibles</p>
+  </header>
 
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+
+      <!-- CLICK DROPDOWN -->
+      <li class="dropdown">
+        <button class="dropdown-toggle" id="productsBtn">
+          Products ▾
+        </button>
+
+        <ul class="dropdown-menu" id="productsMenu">
+          <li><a href="product.html#booster">Booster Packs</a></li>
+          <li><a href="product.html#cards">Cards</a></li>
+          <li><a href="product.html#grand-master">Grand Master Set</a></li>
+          <li><a href="product.html#master">Master Set</a></li>
+        </ul>
+      </li>
+
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h2>Catch Them All!</h2>
+      <p>Booster packs, chase cards, and complete Pokémon sets.</p>
+      <a href="product.html" class="btn">Shop Now</a>
+    </section>
+
+    <!-- Featured -->
+    <section class="featured">
+      <h2>Featured Products</h2>
+
+      <div class="product-preview">
+        <h3>Booster Packs</h3>
+        <p>Random sealed Pokémon booster packs.</p>
+      </div>
+
+      <div class="product-preview">
+        <h3>Chase Cards</h3>
+        <p>Rare and graded Pokémon cards.</p>
+      </div>
+
+      <div class="product-preview">
+        <h3>Master Sets</h3>
+        <p>Complete your collection.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Rizzy Pokémon Shop</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="../js/script.js"></script>
+
+</body>
 </html>
