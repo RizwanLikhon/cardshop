@@ -9,86 +9,146 @@
 
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Rizzy Pokémon Shop</h1>
-  </header>
+<header>
+  <h1>Rizzy Pokémon Shop</h1>
+</header>
 
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
 
-      <!-- CLICK DROPDOWN -->
-      <li class="dropdown">
-        <button class="dropdown-toggle" id="productsBtn">
-          Products ▾
-        </button>
+    <li class="dropdown">
+      <button class="dropdown-toggle" id="productsBtn">Products ▾</button>
+      <ul class="dropdown-menu" id="productsMenu">
+        <li><a href="Product/pack.html">Booster Packs</a></li>
+        <li><a href="Product/cards.html">Cards</a></li>
+        <li><a href="Product/grandmaster.html">Grand Master Set</a></li>
+        <li><a href="Product/master.html">Master Set</a></li>
+      </ul>
+    </li>
 
-        <ul class="dropdown-menu" id="productsMenu">
-          <li><a href="Product/pack.html">Booster Packs</a></li>
-          <li><a href="Product/cards.html">Cards</a></li>
-          <li><a href="Product/grandmaster.html">Grand Master Set</a></li>
-          <li><a href="Product/master.html">Master Set</a></li>
-        </ul>
-      </li>
+    <li class="cart-icon">
+      <a href="cart.html">🛒 <span id="cart-count">0</span></a>
+    </li>
+  </ul>
+</nav>
 
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<main>
 
-  <!-- Main Content -->
-  <main>
+<section>
+  <h2>Booster Packs</h2>
 
-    <!-- Booster Packs -->
-    <section id="booster">
-      <h2>Booster Packs</h2>
+  <div class="pokemon-grid">
 
-      <div class="product">
-        <h3>Pokémon Card Pack</h3>
-        <p>Get a random pack of Pokémon cards to add to your collection!</p>
-        <button>Buy Now</button>
+    <div class="pokemon-product">
+      <h3>Scarlet & Violet Booster Pack</h3>
+      <p class="price">$4.49</p>
+
+      <div class="qty-selector">
+        <button onclick="changeQty('sv-pack', -1)">−</button>
+        <span id="qty-sv-pack">0</span>
+        <button onclick="changeQty('sv-pack', 1)">+</button>
       </div>
-    </section>
 
-    <!-- Cards -->
-    <section id="cards">
-      <h2>Cards</h2>
+      <button onclick="addToCart({
+        id:'sv-pack',
+        name:'Scarlet & Violet Booster Pack',
+        price:4.49,
+        image:'images/sv-pack.jpg'
+      })">
+        Add to Cart
+      </button>
+    </div>
 
-      <div class="product">
-        <h3>Chase Cards</h3>
-        <p>Get your favourite and chase cards.</p>
-        <button>Buy Now</button>
+  </div>
+</section>
+
+<section>
+  <h2>Cards</h2>
+
+  <div class="pokemon-grid">
+
+    <div class="pokemon-product">
+      <h3>Chase Pokémon Card</h3>
+      <p class="price">$49.99</p>
+
+      <div class="qty-selector">
+        <button onclick="changeQty('chase-card', -1)">−</button>
+        <span id="qty-chase-card">0</span>
+        <button onclick="changeQty('chase-card', 1)">+</button>
       </div>
-    </section>
 
-    <!-- Grand Master Set -->
-    <section id="grand-master">
-      <h2>Grand Master Set</h2>
+      <button onclick="addToCart({
+        id:'chase-card',
+        name:'Chase Pokémon Card',
+        price:49.99,
+        image:'images/card1.jpg'
+      })">
+        Add to Cart
+      </button>
+    </div>
 
-      <div class="product">
-        <h3>Grand Master Collection</h3>
-        <p>A premium curated Pokémon card collection.</p>
-        <button>Buy Now</button>
+  </div>
+</section>
+
+<section>
+  <h2>Grand Master Set</h2>
+
+  <div class="pokemon-grid">
+
+    <div class="pokemon-product">
+      <h3>Grand Master Collection</h3>
+      <p class="price">$399.99</p>
+
+      <div class="qty-selector">
+        <button onclick="changeQty('grand-master', -1)">−</button>
+        <span id="qty-grand-master">0</span>
+        <button onclick="changeQty('grand-master', 1)">+</button>
       </div>
-    </section>
 
-    <!-- Master Set -->
-    <section id="master">
-      <h2>Master Set</h2>
+      <button onclick="addToCart({
+        id:'grand-master',
+        name:'Grand Master Collection',
+        price:399.99,
+        image:'images/grandmaster.jpg'
+      })">
+        Add to Cart
+      </button>
+    </div>
 
-      <div class="product">
-        <h3>Master Set</h3>
-        <p>Complete your Pokémon collection with a full master set.</p>
-        <button>Buy Now</button>
+  </div>
+</section>
+
+<section>
+  <h2>Master Set</h2>
+
+  <div class="pokemon-grid">
+
+    <div class="pokemon-product">
+      <h3>Master Set</h3>
+      <p class="price">$249.99</p>
+
+      <div class="qty-selector">
+        <button onclick="changeQty('master-set', -1)">−</button>
+        <span id="qty-master-set">0</span>
+        <button onclick="changeQty('master-set', 1)">+</button>
       </div>
-    </section>
 
-  </main>
+      <button onclick="addToCart({
+        id:'master-set',
+        name:'Master Set',
+        price:249.99,
+        image:'images/master.jpg'
+      })">
+        Add to Cart
+      </button>
+    </div>
 
-  <!-- JavaScript -->
-  <script src="../js/script.js"></script>
+  </div>
+</section>
 
+</main>
+
+<script src="js/script.js"></script>
 </body>
 </html>
