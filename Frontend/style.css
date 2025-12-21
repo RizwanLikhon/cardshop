@@ -4,30 +4,43 @@
   box-sizing: border-box;
 }
 
+/* ================= ROOT COLORS ================= */
+:root {
+  --poke-red: #e3350d;
+  --poke-yellow: #ffcb05;
+  --poke-blue: #2a75bb;
+  --dark: #0f172a;
+  --light: #f8fafc;
+  --border: #e5e7eb;
+}
+
+/* ================= BODY ================= */
 body {
   font-family: "Trebuchet MS", Arial, sans-serif;
-  background: #ffffff;
-  color: #1f2937;
+  background: linear-gradient(180deg, #f8fafc, #eef2ff);
+  color: var(--dark);
 }
 
 /* ================= HEADER ================= */
 header {
-  background: #dc2626;
+  background: linear-gradient(135deg, var(--poke-red), #ff6b35);
   color: white;
-  padding: 28px;
+  padding: 30px;
   text-align: center;
-  border-bottom: 4px solid #111827;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 header h1 {
-  font-size: 32px;
-  letter-spacing: 1px;
+  font-size: 34px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 /* ================= NAV ================= */
 nav {
-  background: #facc15;
-  border-bottom: 3px solid #111827;
+  background: linear-gradient(90deg, var(--poke-yellow), #ffe066);
+  padding: 14px 22px;
+  border-bottom: 3px solid var(--dark);
 }
 
 nav ul {
@@ -35,37 +48,41 @@ nav ul {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 14px 20px;
 }
 
 nav a,
 .dropdown-toggle {
   text-decoration: none;
-  color: #111827;
+  color: var(--dark);
+  background: white;
+  border: 2px solid var(--dark);
   padding: 10px 20px;
   border-radius: 999px;
-  background: white;
-  border: 2px solid #111827;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.25s ease;
 }
 
 nav a:hover,
 .dropdown-toggle:hover {
-  background: #fef3c7;
+  background: var(--poke-blue);
+  color: white;
+  transform: translateY(-2px);
 }
 
+/* ================= CART ICON ================= */
 .cart-icon {
   margin-left: auto;
 }
 
 #cart-count {
-  background: #dc2626;
+  background: var(--poke-red);
   color: white;
   font-size: 12px;
-  padding: 2px 7px;
+  padding: 3px 8px;
   border-radius: 999px;
   margin-left: 6px;
+  box-shadow: 0 0 0 2px white;
 }
 
 /* ================= DROPDOWN ================= */
@@ -76,15 +93,14 @@ nav a:hover,
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 120%;
+  top: 130%;
   left: 0;
   width: 220px;
   background: white;
-  border: 2px solid #111827;
-  border-radius: 14px;
-  padding: 8px 0;
+  border-radius: 16px;
+  padding: 10px 0;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
   z-index: 999;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
 .dropdown-menu.show {
@@ -94,15 +110,16 @@ nav a:hover,
 .dropdown-menu a {
   display: block;
   padding: 12px 18px;
+  font-weight: bold;
 }
 
 .dropdown-menu a:hover {
-  background: #fef3c7;
+  background: #eef2ff;
 }
 
 /* ================= MAIN ================= */
 main {
-  padding: 50px 20px;
+  padding: 60px 20px;
 }
 
 section {
@@ -111,7 +128,7 @@ section {
 }
 
 section h2 {
-  font-size: 28px;
+  font-size: 30px;
   margin-bottom: 30px;
   letter-spacing: 1px;
 }
@@ -123,150 +140,176 @@ section h2 {
   gap: 50px;
 }
 
+/* ================= PRODUCT CARD ================= */
 .pokemon-product {
+  background: white;
+  padding: 24px;
+  border-radius: 20px;
   text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.pokemon-product::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--poke-blue), var(--poke-red));
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.pokemon-product:hover::before {
+  opacity: 1;
+}
+
+.pokemon-product:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
 }
 
 .pokemon-product img {
   width: 100%;
-  max-width: 280px;
-  height: auto;
+  max-width: 240px;
   margin: 0 auto 18px;
   display: block;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.25));
 }
 
 .pokemon-product h3 {
   font-size: 16px;
-  font-weight: 600;
-  line-height: 1.4;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .pokemon-product .price {
   font-size: 16px;
-  margin-bottom: 12px;
-  font-weight: 500;
+  font-weight: bold;
+  margin-bottom: 14px;
 }
 
-/* ================= QUANTITY SELECTOR ================= */
+/* ================= QTY CONTROLS ================= */
 .qty-selector {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
   margin-bottom: 14px;
 }
 
 .qty-selector button {
   width: 36px;
   height: 36px;
-  border: 2px solid #111827;
-  background: white;
+  border-radius: 50%;
+  border: 2px solid var(--dark);
+  background: var(--light);
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .qty-selector button:hover {
-  background: #fef3c7;
+  background: var(--poke-yellow);
+  transform: scale(1.1);
 }
 
 .qty-selector span {
   width: 36px;
-  text-align: center;
   font-size: 16px;
   font-weight: bold;
 }
 
-/* ================= ADD TO CART BUTTON ================= */
+/* ================= ADD TO CART ================= */
 .pokemon-product button {
-  background: #2563eb;
+  background: linear-gradient(135deg, var(--poke-blue), #60a5fa);
   color: white;
   border: none;
-  padding: 12px 26px;
-  font-size: 14px;
+  padding: 12px 28px;
+  border-radius: 999px;
   font-weight: bold;
-  border-radius: 6px;
   cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
 }
 
 .pokemon-product button:hover {
-  background: #1e40af;
+  background: linear-gradient(135deg, var(--poke-red), #fb7185);
+  transform: scale(1.05);
 }
 
 /* ================= CART PAGE ================= */
 .cart-layout {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 50px;
   max-width: 1300px;
-  margin: 40px auto;
+  margin: 0 auto;
 }
 
-.cart-header,
+.cart-header {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+  font-weight: bold;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+}
+
 .cart-row {
   display: grid;
   grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
   align-items: center;
-}
-
-.cart-header {
-  font-weight: bold;
-  padding-bottom: 12px;
-  border-bottom: 2px solid #e5e7eb;
-}
-
-.cart-row {
-  padding: 16px 0;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
 }
 
 .cart-product {
   display: flex;
-  align-items: center;
   gap: 16px;
+  align-items: center;
 }
 
 .cart-product img {
   width: 70px;
   height: 70px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid #111827;
+  object-fit: contain;
 }
 
 .cart-product small {
-  font-size: 12px;
+  display: block;
   color: #6b7280;
-}
-
-.qty-controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.qty-controls button {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 2px solid #111827;
-  background: white;
-  cursor: pointer;
+  margin-top: 4px;
 }
 
 .remove {
-  color: #dc2626;
+  color: var(--poke-red);
+  font-size: 13px;
   cursor: pointer;
-  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* ================= CART INPUT ================= */
+.qty-input {
+  width: 50px;
+  text-align: center;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
 }
 
 /* ================= ORDER SUMMARY ================= */
 .order-summary {
   background: white;
-  border: 2px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 24px;
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.order-summary h2 {
+  margin-bottom: 22px;
 }
 
 .summary-row {
@@ -276,33 +319,24 @@ section h2 {
 }
 
 .free-ship {
-  background: #f3f4f6;
+  background: #eef2ff;
   padding: 12px;
-  text-align: center;
-  font-weight: bold;
   margin: 16px 0;
+  font-weight: bold;
+  text-align: center;
 }
 
 .checkout-btn {
   width: 100%;
-  background: #fbbf24;
+  background: linear-gradient(135deg, var(--poke-yellow), #fde047);
   border: none;
-  padding: 14px;
+  padding: 16px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 16px;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
 }
 
 .checkout-btn:hover {
-  background: #f59e0b;
-}
-
-.paypal-btn {
-  width: 100%;
-  background: #fcd34d;
-  border: none;
-  padding: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 12px;
+  transform: scale(1.05);
 }
