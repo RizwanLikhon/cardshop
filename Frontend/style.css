@@ -1,52 +1,74 @@
+/* ===============================
+   Pokémon Theme CSS
+   =============================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ---- Global ---- */
 body {
-  font-family: Arial, sans-serif;
-  background: #f5f7fb;
-  color: #111827;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background: linear-gradient(180deg, #f5f7fb, #eef2ff);
+  color: #1f2937;
 }
 
-/* Header */
+/* ---- Header ---- */
 header {
-  background: #dc2626;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
   color: white;
-  padding: 24px;
+  padding: 28px 16px;
   text-align: center;
+  border-bottom: 6px solid #111827;
 }
 
-/* Nav */
+header h1 {
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+header p {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+/* ---- Navigation ---- */
 nav {
   background: #facc15;
+  border-bottom: 3px solid #111827;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 10px;
+  gap: 12px;
   padding: 12px 16px;
+  align-items: center;
 }
 
 nav a,
 .dropdown-toggle {
   text-decoration: none;
   color: #111827;
-  padding: 10px 16px;
-  border-radius: 8px;
-  background: none;
-  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: white;
+  border: 2px solid #111827;
   cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.15s ease, background 0.15s ease;
 }
 
 nav a:hover,
 .dropdown-toggle:hover {
   background: #e0e7ff;
+  transform: translateY(-2px);
 }
 
-/* Dropdown */
+/* ---- Dropdown ---- */
 .dropdown {
   position: relative;
 }
@@ -55,12 +77,14 @@ nav a:hover,
   display: none;
   position: absolute;
   background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  width: 200px;
-  top: 110%;
+  border: 2px solid #111827;
+  border-radius: 12px;
+  width: 210px;
+  top: 120%;
   left: 0;
   padding: 6px 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  z-index: 100;
 }
 
 .dropdown-menu.show {
@@ -69,61 +93,114 @@ nav a:hover,
 
 .dropdown-menu a {
   display: block;
-  padding: 10px 14px;
+  padding: 10px 16px;
+  font-weight: 600;
 }
 
-/* Layout */
+.dropdown-menu a:hover {
+  background: #fef3c7;
+}
+
+/* ---- Layout ---- */
 main {
-  padding: 40px 16px;
+  padding: 48px 16px;
 }
 
 section {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 section h2 {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  font-size: 26px;
+  color: #dc2626;
+  border-left: 6px solid #facc15;
+  padding-left: 12px;
 }
 
-/* Product Grid */
+/* ---- Product Grid ---- */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  gap: 24px;
 }
 
+/* ---- Product Card ---- */
 .product {
   background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
+  border: 3px solid #111827;
+  border-radius: 18px;
   padding: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
 }
 
+.product::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 6px;
+  background: #111827;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Hover lift */
+.product:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(0,0,0,0.25);
+}
+
+/* ---- Product Image ---- */
 .product img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-bottom: 12px;
+  border: 2px solid #111827;
 }
 
+/* ---- Product Text ---- */
+.product h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.product p {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #374151;
+}
+
+/* ---- Buttons ---- */
 .product button {
-  background: #2563eb;
+  width: 100%;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
   color: white;
-  border: none;
-  padding: 10px 14px;
-  border-radius: 8px;
+  border: 2px solid #111827;
+  padding: 12px 0;
+  border-radius: 999px;
   cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: transform 0.15s ease, background 0.15s ease;
 }
 
 .product button:hover {
-  background: #1e40af;
+  background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+  transform: scale(1.05);
 }
 
-/* Footer */
+/* ---- Footer ---- */
 footer {
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  padding: 24px;
+  margin-top: 60px;
+  background: #111827;
+  color: white;
+  font-size: 14px;
 }
