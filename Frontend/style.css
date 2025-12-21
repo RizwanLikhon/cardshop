@@ -1,27 +1,22 @@
-/* ===============================
-   Pokémon Theme CSS
-   =============================== */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ---- Global ---- */
 body {
   font-family: "Trebuchet MS", Arial, sans-serif;
-  background: linear-gradient(180deg, #f5f7fb, #eef2ff);
+  background: #ffffff;
   color: #1f2937;
 }
 
-/* ---- Header ---- */
+/* ================= HEADER ================= */
 header {
-  background: linear-gradient(135deg, #ef4444, #dc2626);
+  background: #dc2626;
   color: white;
-  padding: 28px 16px;
+  padding: 28px;
   text-align: center;
-  border-bottom: 6px solid #111827;
+  border-bottom: 4px solid #111827;
 }
 
 header h1 {
@@ -29,13 +24,7 @@ header h1 {
   letter-spacing: 1px;
 }
 
-header p {
-  margin-top: 6px;
-  font-size: 14px;
-  opacity: 0.95;
-}
-
-/* ---- Navigation ---- */
+/* ================= NAV ================= */
 nav {
   background: #facc15;
   border-bottom: 3px solid #111827;
@@ -44,31 +33,42 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 12px;
-  padding: 12px 16px;
   align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
 }
 
 nav a,
 .dropdown-toggle {
   text-decoration: none;
   color: #111827;
-  padding: 10px 18px;
+  padding: 10px 20px;
   border-radius: 999px;
   background: white;
   border: 2px solid #111827;
-  cursor: pointer;
   font-weight: bold;
-  transition: transform 0.15s ease, background 0.15s ease;
+  cursor: pointer;
 }
 
 nav a:hover,
 .dropdown-toggle:hover {
-  background: #e0e7ff;
-  transform: translateY(-2px);
+  background: #fef3c7;
 }
 
-/* ---- Dropdown ---- */
+.cart-icon {
+  margin-left: auto;
+}
+
+#cart-count {
+  background: #dc2626;
+  color: white;
+  font-size: 12px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  margin-left: 6px;
+}
+
+/* ================= DROPDOWN ================= */
 .dropdown {
   position: relative;
 }
@@ -76,15 +76,15 @@ nav a:hover,
 .dropdown-menu {
   display: none;
   position: absolute;
-  background: white;
-  border: 2px solid #111827;
-  border-radius: 12px;
-  width: 210px;
   top: 120%;
   left: 0;
-  padding: 6px 0;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  z-index: 100;
+  width: 220px;
+  background: white;
+  border: 2px solid #111827;
+  border-radius: 14px;
+  padding: 8px 0;
+  z-index: 999;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
 .dropdown-menu.show {
@@ -93,114 +93,176 @@ nav a:hover,
 
 .dropdown-menu a {
   display: block;
-  padding: 10px 16px;
-  font-weight: 600;
+  padding: 12px 18px;
 }
 
 .dropdown-menu a:hover {
   background: #fef3c7;
 }
 
-/* ---- Layout ---- */
+/* ================= MAIN ================= */
 main {
-  padding: 48px 16px;
+  padding: 50px 20px;
 }
 
 section {
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
 section h2 {
-  margin-bottom: 24px;
-  font-size: 26px;
-  color: #dc2626;
-  border-left: 6px solid #facc15;
-  padding-left: 12px;
+  font-size: 28px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
 }
 
-/* ---- Product Grid ---- */
-.product-grid {
+/* ================= PRODUCT GRID (POKÉMON STYLE) ================= */
+.pokemon-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 50px;
 }
 
-/* ---- Product Card ---- */
-.product {
-  background: white;
-  border: 3px solid #111827;
-  border-radius: 18px;
-  padding: 16px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  position: relative;
-}
-
-.product::before {
-  content: "";
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 6px;
-  background: #111827;
-  border-radius: 0 0 10px 10px;
-}
-
-/* Hover lift */
-.product:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 30px rgba(0,0,0,0.25);
-}
-
-/* ---- Product Image ---- */
-.product img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 12px;
-  border: 2px solid #111827;
-}
-
-/* ---- Product Text ---- */
-.product h3 {
-  font-size: 18px;
-  margin-bottom: 6px;
-}
-
-.product p {
-  font-size: 14px;
-  margin-bottom: 12px;
-  color: #374151;
-}
-
-/* ---- Buttons ---- */
-.product button {
-  width: 100%;
-  background: linear-gradient(135deg, #2563eb, #1e40af);
-  color: white;
-  border: 2px solid #111827;
-  padding: 12px 0;
-  border-radius: 999px;
-  cursor: pointer;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  transition: transform 0.15s ease, background 0.15s ease;
-}
-
-.product button:hover {
-  background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
-  transform: scale(1.05);
-}
-
-/* ---- Footer ---- */
-footer {
+.pokemon-product {
   text-align: center;
-  padding: 24px;
-  margin-top: 60px;
-  background: #111827;
+}
+
+.pokemon-product img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin: 0 auto 18px;
+  display: block;
+}
+
+.pokemon-product h3 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.pokemon-product .price {
+  font-size: 16px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.pokemon-product button {
+  background: #2563eb;
   color: white;
+  border: none;
+  padding: 12px 26px;
   font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pokemon-product button:hover {
+  background: #1e40af;
+}
+
+/* ================= CART PAGE ================= */
+.cart-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  max-width: 1300px;
+  margin: 40px auto;
+}
+
+.cart-header,
+.cart-row {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.cart-header {
+  font-weight: bold;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.cart-row {
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cart-product {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cart-product img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #111827;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty-controls button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #111827;
+  background: white;
+  cursor: pointer;
+}
+
+.remove {
+  color: #dc2626;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ================= ORDER SUMMARY ================= */
+.order-summary {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.free-ship {
+  background: #f3f4f6;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  margin: 16px 0;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: #fbbf24;
+  border: none;
+  padding: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.paypal-btn {
+  width: 100%;
+  background: #fcd34d;
+  border: none;
+  padding: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 12px;
 }

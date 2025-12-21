@@ -6,14 +6,16 @@
   <title>Booster Packs</title>
   <link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
 
-<header><h1>Rizzy Pokémon Shop</h1></header>
+<header>
+  <h1>Booster Packs</h1>
+</header>
 
 <nav>
   <ul>
     <li><a href="../index.html">Home</a></li>
+
     <li class="dropdown">
       <button class="dropdown-toggle" id="productsBtn">Products ▾</button>
       <ul class="dropdown-menu" id="productsMenu">
@@ -23,6 +25,10 @@
         <li><a href="master.html">Master Set</a></li>
       </ul>
     </li>
+
+    <li class="cart-icon">
+      <a href="../cart.html">🛒 <span id="cart-count">0</span></a>
+    </li>
   </ul>
 </nav>
 
@@ -30,18 +36,78 @@
   <section>
     <h2>Booster Packs</h2>
 
-    <div class="product-grid">
-      <div class="product">
-        <img src="../images/booster1.jpg" alt="Booster Pack">
-        <h3>Scarlet & Violet Booster</h3>
-        <button>Buy Now</button>
+    <div class="product-grid pokemon-grid">
+
+      <div class="pokemon-product">
+        <img src="../images/pe-pack.jpg">
+        <h3>Pokémon TCG: Prismatic Evolution Booster Pack</h3>
+        <p class="price">$4.49</p>
+        <button onclick="addToCart({id:'pe-pack',name:'Prismatic Evolution Pack',price:4.49,image:'../images/pe-pack.jpg'})">Add to Cart</button>
       </div>
 
-      <div class="product">
-        <img src="../images/booster2.jpg" alt="Booster Pack">
-        <h3>Paldea Evolved Booster</h3>
-        <button>Buy Now</button>
+      <div class="pokemon-product">
+        <img src="../images/paldea-pack.jpg">
+        <h3>Pokémon TCG: Paldea Evolved Booster Pack</h3>
+        <p class="price">$4.99</p>
+        <button onclick="addToCart({id:'paldea-pack',name:'Paldea Evolved Pack',price:4.99,image:'../images/paldea-pack.jpg'})">Add to Cart</button>
       </div>
+
+      <div class="pokemon-product">
+        <img src="../images/obsidian-pack.jpg">
+        <h3>Pokémon TCG: Obsidian Flames Booster Pack</h3>
+        <p class="price">$5.49</p>
+        <button onclick="addToCart({id:'obsidian-pack',name:'Obsidian Flames Pack',price:5.49,image:'../images/obsidian-pack.jpg'})">Add to Cart</button>
+      </div>
+
+      <div class="pokemon-product">
+        <img src="../images/paradox-pack.jpg">
+        <h3>Pokémon TCG: Paradox Rift Booster Pack</h3>
+        <p class="price">$5.99</p>
+        <button onclick="addToCart({id:'paradox-pack',name:'Paradox Rift Pack',price:5.99,image:'../images/paradox-pack.jpg'})">Add to Cart</button>
+      </div>
+
+      <div class="pokemon-product">
+        <img src="../images/temporal-pack.jpg">
+        <h3>Pokémon TCG: Temporal Forces Booster Pack</h3>
+        <p class="price">$5.99</p>
+        <button onclick="addToCart({id:'temporal-pack',name:'Temporal Forces Pack',price:5.99,image:'../images/temporal-pack.jpg'})">Add to Cart</button>
+      </div>
+
+      <div class="pokemon-product">
+        <img src="../images/twilight-pack.jpg">
+        <h3>Pokémon TCG: Twilight Masquerade Booster Pack</h3>
+        <p class="price">$6.49</p>
+        <button onclick="addToCart({id:'twilight-pack',name:'Twilight Masquerade Pack',price:6.49,image:'../images/twilight-pack.jpg'})">Add to Cart</button>
+      </div>
+
+      <div class="pokemon-product">
+        <img src="../images/151-pack.jpg">
+        <h3>Pokémon TCG: Scarlet & Violet—151 Booster Pack</h3>
+        <p class="price">$6.99</p>
+        <button onclick="addToCart({id:'151-pack',name:'151 Booster Pack',price:6.99,image:'../images/151-pack.jpg'})">Add to Cart</button>
+      </div>
+
+      <div class="pokemon-product">
+        <img src="../images/stellar-pack.jpg">
+        <h3>Pokémon TCG: Stellar Crown Booster Pack</h3>
+        <p class="price">$5.99</p>
+        <button onclick="addToCart({id:'stellar-pack',name:'Stellar Crown Pack',price:5.99,image:'../images/stellar-pack.jpg'})">Add to Cart</button>
+      </div>
+
+      <div class="pokemon-product">
+        <img src="../images/shrouded-pack.jpg">
+        <h3>Pokémon TCG: Shrouded Fable Booster Pack</h3>
+        <p class="price">$5.49</p>
+        <button onclick="addToCart({id:'shrouded-pack',name:'Shrouded Fable Pack',price:5.49,image:'../images/shrouded-pack.jpg'})">Add to Cart</button>
+      </div>
+
+      <div class="pokemon-product">
+        <img src="../images/base-pack.jpg">
+        <h3>Pokémon TCG: Scarlet & Violet Base Booster Pack</h3>
+        <p class="price">$4.49</p>
+        <button onclick="addToCart({id:'base-pack',name:'SV Base Pack',price:4.49,image:'../images/base-pack.jpg'})">Add to Cart</button>
+      </div>
+
     </div>
   </section>
 </main>
